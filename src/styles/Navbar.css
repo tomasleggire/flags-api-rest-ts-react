@@ -1,5 +1,5 @@
 .main-nav {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   width: 100%;
   height: 55px;
   background-color: var(--light-white);
@@ -7,15 +7,43 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 60px;
-  border-radius: 10%;
+  box-shadow: 0px 0px 13px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 13px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 13px -7px rgba(0, 0, 0, 0.75);
+  color: var(--black);
 }
 
 .main-nav h3 {
   text-align: center;
 }
 
+.btn-mode {
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.btn-mode-icon {
+  color: var(--black);
+}
+
+.main-nav h5 {
+  text-align: center;
+  font-weight: 500;
+}
+
 @media only screen and (max-width: 660px) {
   .main-nav h3 {
     font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .main-nav {
+    padding: 0 20px;
   }
 }
