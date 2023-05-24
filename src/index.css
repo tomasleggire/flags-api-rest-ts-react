@@ -4,6 +4,12 @@
   --black: rgb(53, 48, 48);
 }
 
+[data-theme="dark"] {
+  --white: rgb(45, 44, 51);
+  --light-white: rgb(66, 66, 70);
+  --black: rgb(238, 236, 236);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
