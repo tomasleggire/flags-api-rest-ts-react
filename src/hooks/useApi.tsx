@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
 export default function useApi() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Array<Object>>([]);
   const [api, setApi] = useState<string>(
-    "https://restcountries.com/v3.1/independent?status=true&fields=name,capital,region,population,subregion,languages,currencies,borders"
+    "https://restcountries.com/v3.1/independent?status=true&fields=name,capital,region,population,subregion,languages,currencies,borders,flag"
   );
 
   useEffect(() => {

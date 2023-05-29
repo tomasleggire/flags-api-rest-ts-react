@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function useToggleTheme() {
   const [theme, setTheme] = useState<string>("light");
 
-  const toggleTheme = () => {
+  const toggleTheme = (): void => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
 
