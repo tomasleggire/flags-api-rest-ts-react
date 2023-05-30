@@ -3,9 +3,10 @@ import useApi from "./hooks/useApi";
 import useToggleTheme from "./hooks/useToggleTheme";
 import Navbar from "./components/Navbar";
 import SearchBar from "./components/SearchBar";
+import FilterBy from "./components/FilterBy";
 
 function App() {
-  const { data } = useApi();
+  const { data, options, handleChange, selectedOption } = useApi();
   const { theme, toggleTheme } = useToggleTheme();
 
   return (
@@ -13,7 +14,11 @@ function App() {
       <Navbar toggleTheme={toggleTheme} theme={theme} />
       <div className="main-div-bars">
         <SearchBar />
-        <div className="region">filter by region</div>
+        <FilterBy
+          options={options}
+          handleChange={handleChange}
+          selectedOption={selectedOption}
+        />
       </div>
     </div>
   );
