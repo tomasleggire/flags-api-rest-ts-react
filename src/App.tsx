@@ -15,6 +15,7 @@ function App() {
       <div className="main-div-bars">
         <SearchBar />
         <FilterBy
+          className="filter"
           options={options}
           handleChange={handleChange}
           selectedOption={selectedOption}

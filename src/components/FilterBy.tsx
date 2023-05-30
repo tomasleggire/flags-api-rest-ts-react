@@ -37,8 +37,8 @@ const customStyles = {
     cursor: "pointer",
     backgroundColor: "var(--light-white)",
     boxShadow: "0px 0px 13px -7px rgba(0, 0, 0, 0.75)", // Agrega sombra al menú
-    "-webkit-box-shadow": "0px 0px 13px -7px rgba(0, 0, 0, 0.75)", // Agrega sombra al menú
-    "-moz-box-shadow": "0px 0px 13px -7px rgba(0, 0, 0, 0.75)", // Agrega sombra al menú
+    WebkitBoxShadow: "0px 0px 13px -7px rgba(0, 0, 0, 0.75)", // Agrega sombra al menú
+    WebkitBoxShadow: "0px 0px 13px -7px rgba(0, 0, 0, 0.75)", // Agrega sombra al menú
   }),
   dropdownIndicator: (base) => ({
     ...base,
@@ -65,8 +65,8 @@ const customStyles = {
     fontFamily:
       '"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif',
     boxShadow: "0px 0px 13px -7px rgba(0, 0, 0, 0.75)", // Agrega sombra al menú
-    "-webkit-box-shadow": "0px 0px 13px -7px rgba(0, 0, 0, 0.75)", // Agrega sombra al menú
-    "-moz-box-shadow": "0px 0px 13px -7px rgba(0, 0, 0, 0.75)", // Agrega sombra al menú // Cambia el color de fondo de la lista que contiene las opciones
+    WebkitBoxShadow: "0px 0px 13px -7px rgba(0, 0, 0, 0.75)", // Agrega sombra al menú
+    WebkitBoxShadow: "0px 0px 13px -7px rgba(0, 0, 0, 0.75)", // Agrega sombra al menú // Cambia el color de fondo de la lista que contiene las opciones
   }),
   placeholder: (base) => ({
     ...base,
