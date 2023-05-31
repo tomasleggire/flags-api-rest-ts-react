@@ -15,6 +15,27 @@ export default function CountryContainer(props: MyProps) {
           alt={props.countryData.flags.alt}
         />
       </div>
+      <div className="contry-info">
+        <h4 className="country-name">{props.countryData.name.common}</h4>
+        <h6 className="country-population">
+          Population:{" "}
+          <span className="country-population-num">
+            {props.countryData.population}
+          </span>
+        </h6>
+        <h6 className="country-region">
+          Region:{" "}
+          <span className="country-region-detail">
+            {props.countryData.region}
+          </span>
+        </h6>
+        <h6 className="country-capital">
+          Capital:{" "}
+          <span className="country-capital-detail">
+            {props.countryData.capital}
+          </span>
+        </h6>
+      </div>
     </div>
   );
 }
