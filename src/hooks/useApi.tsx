@@ -23,7 +23,7 @@ export default function useApi() {
     { value: "oceania", label: "Oceania" },
   ];
 
-  function handleChange(selected) {
+  function handleChange(selected: string | null): void {
     setSelectedOption(selected);
     selected
       ? setApi(`https://restcountries.com/v3.1/region/${selected.value}`)
