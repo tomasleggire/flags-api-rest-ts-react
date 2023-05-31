@@ -26,9 +26,10 @@ function App() {
 
       <CountryLayout>
         {data.map((country) => (
-          <CountryContainer>
-            <h5>Hola</h5>
-          </CountryContainer>
+          <CountryContainer
+            countryData={country}
+            key={country.maps.googleMaps + " " + country.altSpellings[1]}
+          />
         ))}
       </CountryLayout>
     </div>
