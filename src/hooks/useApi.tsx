@@ -12,7 +12,7 @@ export default function useApi() {
       .then((data) => setData(data));
   }, [api]);
 
-  //console.log(data);
+  console.log(data);
 
   const [selectedOption, setSelectedOption] = React.useState(null);
   const options = [
@@ -25,6 +25,9 @@ export default function useApi() {
 
   function handleChange(selected) {
     setSelectedOption(selected);
+    selected
+      ? setApi(`https://restcountries.com/v3.1/region/${selected.value}`)
+      : setApi("https://restcountries.com/v3.1/independent?status=true");
     console.log(selected);
   }
 
