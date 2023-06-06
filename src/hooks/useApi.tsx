@@ -5,6 +5,7 @@ export default function useApi() {
   const [api, setApi] = useState<string>(
     "https://restcountries.com/v3.1/independent?status=true"
   );
+  const [searchValue, setSearchValue] = useState<string>("");
 
   useEffect(() => {
     fetch(api)
@@ -36,6 +37,8 @@ export default function useApi() {
     options,
     handleChange,
     selectedOption,
+    searchValue,
+    setSearchValue,
   };
 }
 //"https://restcountries.com/v3.1/independent?status=true&fields=name,capital,region,population,subregion,languages,currencies,borders,flag"

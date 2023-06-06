@@ -1,7 +1,17 @@
+import { useEffect } from "react";
 import "../styles/SearchBar.css";
 import { AiOutlineSearch } from "react-icons/ai";
 
-export default function SearchBar() {
+interface MyProps {
+  searchValue: string;
+  setSearchValue: () => void;
+}
+
+export default function SearchBar(props: MyProps) {
+  useEffect(() => {
+    console.log(props.searchValue);
+  }, [props.searchValue]);
+
   return (
     <div className="main-search-bar">
       <AiOutlineSearch className="search-bar-icon" />
@@ -9,6 +19,8 @@ export default function SearchBar() {
         type="text"
         className="search-bar-input"
         placeholder="Search for a country..."
+        value={props.searchValue}
+        onChange={(e) => props.setSearchValue(e.target.value)}
       ></input>
     </div>
   );
