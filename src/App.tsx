@@ -15,6 +15,7 @@ function App() {
     selectedOption,
     searchValue,
     setSearchValue,
+    filterData,
   } = useApi();
   const { theme, toggleTheme } = useToggleTheme();
 
@@ -32,7 +33,7 @@ function App() {
       </div>
 
       <CountryLayout>
-        {data.map((country) => (
+        {filterData.map((country) => (
           <CountryContainer
             countryData={country}
             key={country.maps.googleMaps + " " + country.altSpellings[1]}

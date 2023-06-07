@@ -8,10 +8,6 @@ interface MyProps {
 }
 
 export default function SearchBar(props: MyProps) {
-  useEffect(() => {
-    console.log(props.searchValue);
-  }, [props.searchValue]);
-
   return (
     <div className="main-search-bar">
       <AiOutlineSearch className="search-bar-icon" />

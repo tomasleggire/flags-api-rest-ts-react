@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export default function useApi() {
   const [data, setData] = useState<Array<Object>>([]);
+  const [filterData, setFilterData] = useState<Array<Object>>([]);
   const [api, setApi] = useState<string>(
     "https://restcountries.com/v3.1/independent?status=true"
   );
@@ -11,9 +12,10 @@ export default function useApi() {
     fetch(api)
       .then((response) => response.json())
       .then((data) => setData(data));
+    setSearchValue("");
   }, [api]);
 
-  console.log(data);
+  //console.log(filterData);
 
   const [selectedOption, setSelectedOption] = React.useState(null);
   const options = [
@@ -32,6 +34,25 @@ export default function useApi() {
     console.log(selected);
   }
 
+  const filtrarPorNombre = (array, filtro) => {
+    return array.filter((obj) =>
+      obj.name.common.toLowerCase().startsWith(filtro.toLowerCase())
+    );
+  };
+
+  useEffect(() => {
+    if (searchValue) {
+      let newData = filtrarPorNombre(data, searchValue);
+      setFilterData(newData);
+    } else {
+      setFilterData(data);
+    }
+  }, [searchValue]);
+
+  useEffect(() => {
+    setFilterData(data);
+  }, [data]);
+
   return {
     data,
     options,
@@ -39,6 +60,7 @@ export default function useApi() {
     selectedOption,
     searchValue,
     setSearchValue,
+    filterData,
   };
 }
 //"https://restcountries.com/v3.1/independent?status=true&fields=name,capital,region,population,subregion,languages,currencies,borders,flag"
