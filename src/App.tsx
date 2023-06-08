@@ -36,7 +36,7 @@ function App() {
       {loading && (
         <ReactLoading
           className="loading-img"
-          type="spin"
+          type="bubbles"
           color="var(--black)"
         />
       )}
