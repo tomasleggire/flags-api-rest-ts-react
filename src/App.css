@@ -25,6 +25,13 @@
   gap: 20px;
 }
 
+.error-msj {
+  margin: 40px;
+  position: absolute;
+  text-align: center;
+  color: var(--black);
+}
+
 @media (width <= 470px) {
   .main-div-bars {
     flex-direction: column;

@@ -33,6 +33,13 @@ function App() {
       </div>
 
       <CountryLayout>
+        {filterData.length === 0 ? (
+          <h3 className="error-msj">
+            No se encontraron resultados para "<span>{searchValue}"</span>
+          </h3>
+        ) : (
+          ""
+        )}
         {filterData.map((country) => (
           <CountryContainer
             countryData={country}

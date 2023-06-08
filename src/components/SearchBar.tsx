@@ -13,6 +13,7 @@ export default function SearchBar(props: MyProps) {
       <AiOutlineSearch className="search-bar-icon" />
       <input
         type="text"
+        maxlength="30"
         className="search-bar-input"
         placeholder="Search for a country..."
         value={props.searchValue}
