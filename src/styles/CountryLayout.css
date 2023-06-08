@@ -8,6 +8,10 @@
   grid-auto-rows: auto;
   grid-gap: 25px;
   place-items: center;
+  opacity: 0;
+  animation: slide-in forwards;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
 }
 
 @media (max-width: 780px) {
@@ -19,5 +23,16 @@
 @media (max-width: 560px) {
   .country-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

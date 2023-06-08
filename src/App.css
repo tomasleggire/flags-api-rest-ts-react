@@ -34,9 +34,8 @@
 }
 
 .loading-img {
-  height: 200px;
-  width: 200px;
-  margin: auto;
+  position: absolute;
+  left: 50%;
 }
 
 @media (width <= 470px) {
