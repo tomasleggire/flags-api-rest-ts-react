@@ -16,6 +16,7 @@ function App() {
     searchValue,
     setSearchValue,
     filterData,
+    loading,
   } = useApi();
   const { theme, toggleTheme } = useToggleTheme();
 
@@ -31,14 +32,12 @@ function App() {
           selectedOption={selectedOption}
         />
       </div>
-
       <CountryLayout>
-        {filterData.length === 0 ? (
+        {loading && <h3 className="loading-msj">Loading...</h3>}
+        {filterData.length === 0 && loading === false && searchValue != "" && (
           <h3 className="error-msj">
-            No se encontraron resultados para "<span>{searchValue}"</span>
+            No results for "<span>{searchValue}"</span>
           </h3>
-        ) : (
-          ""
         )}
         {filterData.map((country) => (
           <CountryContainer

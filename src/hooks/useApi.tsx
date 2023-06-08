@@ -7,12 +7,18 @@ export default function useApi() {
     "https://restcountries.com/v3.1/independent?status=true"
   );
   const [searchValue, setSearchValue] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    fetch(api)
-      .then((response) => response.json())
-      .then((data) => setData(data));
-    setSearchValue("");
+    const fetchData = async () => {
+      setLoading(true);
+      const res = await fetch(api);
+      const data = await res.json();
+      setData(data);
+      setSearchValue("");
+      setLoading(false);
+    };
+    fetchData();
   }, [api]);
 
   //console.log(filterData);
@@ -32,6 +38,7 @@ export default function useApi() {
       ? setApi(`https://restcountries.com/v3.1/region/${selected.value}`)
       : setApi("https://restcountries.com/v3.1/independent?status=true");
     console.log(selected);
+    setSearchValue("");
   }
 
   const filtrarPorNombre = (array, filtro) => {
@@ -61,6 +68,7 @@ export default function useApi() {
     searchValue,
     setSearchValue,
     filterData,
+    loading,
   };
 }
 //"https://restcountries.com/v3.1/independent?status=true&fields=name,capital,region,population,subregion,languages,currencies,borders,flag"
