@@ -25,12 +25,18 @@
   gap: 20px;
 }
 
-.loading-msj,
 .error-msj {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin: 40px;
   position: absolute;
   text-align: center;
   color: var(--black);
+}
+
+.loading-img {
+  height: 200px;
+  width: 200px;
+  margin: auto;
 }
 
 @media (width <= 470px) {

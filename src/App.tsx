@@ -6,6 +6,7 @@ import SearchBar from "./components/SearchBar";
 import FilterBy from "./components/FilterBy";
 import CountryContainer from "./components/CountryContainer";
 import CountryLayout from "./containers/CountryLayout";
+import ReactLoading from "react-loading";
 
 function App() {
   const {
@@ -32,11 +33,17 @@ function App() {
           selectedOption={selectedOption}
         />
       </div>
+      {loading && (
+        <ReactLoading
+          className="loading-img"
+          type="spin"
+          color="var(--black)"
+        />
+      )}
       <CountryLayout>
-        {loading && <h3 className="loading-msj">Loading...</h3>}
         {filterData.length === 0 && loading === false && searchValue != "" && (
           <h3 className="error-msj">
-            No results for "<span>{searchValue}"</span>
+            No results for "<span>{searchValue}</span>""
           </h3>
         )}
         {filterData.map((country) => (
