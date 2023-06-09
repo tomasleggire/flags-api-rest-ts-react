@@ -9,6 +9,8 @@ export default function useApi() {
   const [searchValue, setSearchValue] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
+  const [modalValue, setModalValue] = useState<boolean>(false);
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -60,8 +62,11 @@ export default function useApi() {
     setFilterData(data);
   }, [data]);
 
+  const toggleModal = (): void => {
+    setModalValue(!modalValue);
+  };
+
   return {
-    data,
     options,
     handleChange,
     selectedOption,
@@ -69,6 +74,8 @@ export default function useApi() {
     setSearchValue,
     filterData,
     loading,
+    toggleModal,
+    modalValue,
   };
 }
 //"https://restcountries.com/v3.1/independent?status=true&fields=name,capital,region,population,subregion,languages,currencies,borders,flag"

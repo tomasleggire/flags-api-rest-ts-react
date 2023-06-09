@@ -3,11 +3,18 @@ import "../styles/CountryContainer.css";
 
 interface MyProps {
   countryData: Object;
+  id: string;
+  toggleModal: () => void;
 }
 
 export default function CountryContainer(props: MyProps) {
+  const onClickCountry = (): void => {
+    props.toggleModal();
+    console.log(props.id);
+  };
+
   return (
-    <div className="country-main">
+    <div className="country-main" onClick={onClickCountry}>
       <div className="country-flag-div">
         <img
           className="country-flag"

@@ -7,10 +7,10 @@ import FilterBy from "./components/FilterBy";
 import CountryContainer from "./components/CountryContainer";
 import CountryLayout from "./containers/CountryLayout";
 import ReactLoading from "react-loading";
+import ModalCountry from "./containers/ModalCountry";
 
 function App() {
   const {
-    data,
     options,
     handleChange,
     selectedOption,
@@ -18,12 +18,24 @@ function App() {
     setSearchValue,
     filterData,
     loading,
+    toggleModal,
+    modalValue,
   } = useApi();
   const { theme, toggleTheme } = useToggleTheme();
+
+  if (modalValue) {
+    return (
+      <div className={`App ${theme}`}>
+        <Navbar toggleTheme={toggleTheme} theme={theme} />
+        <ModalCountry toggleModal={toggleModal} />
+      </div>
+    );
+  }
 
   return (
     <div className={`App ${theme}`}>
       <Navbar toggleTheme={toggleTheme} theme={theme} />
+
       <div className="main-div-bars">
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
         <FilterBy
@@ -50,6 +62,8 @@ function App() {
           <CountryContainer
             countryData={country}
             key={country.maps.googleMaps + " " + country.altSpellings[1]}
+            id={`${country.maps.googleMaps} ${country.altSpellings[1]}`}
+            toggleModal={toggleModal}
           />
         ))}
       </CountryLayout>
