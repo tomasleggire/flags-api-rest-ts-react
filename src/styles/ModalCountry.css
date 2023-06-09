@@ -1,17 +1,40 @@
 .modal-main {
   position: fixed;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   left: 100%;
   top: 0;
   width: 100%;
-  height: 100vh;
-  margin-top: 50px;
+  height: 95vh;
   background: var(--white);
-  justify-content: flex-start;
-  align-items: flex-start;
   transition: 0.5s;
   z-index: 10;
+  padding: 0 60px;
+  margin-top: 40px;
 }
 .modal-main-visible {
   left: 0;
+}
+
+.btn-exit {
+  cursor: pointer;
+  border: none;
+  background: none;
+  align-self: flex-start;
+  margin-bottom: 30px;
+  outline: auto;
+}
+
+.content-modal {
+  width: 100%;
+  height: 450px;
+  outline: auto;
+}
+
+@media (width <= 560px) {
+  .modal-main {
+    padding: 0 20px;
+  }
 }

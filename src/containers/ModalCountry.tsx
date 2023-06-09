@@ -9,7 +9,10 @@ interface MyProps {
 export default function ModalCountry(props: MyProps) {
   return (
     <div className={`modal-main ${props.modalValue && "modal-main-visible"}`}>
-      <button onClick={props.toggleModal}>X</button>
+      <button className="btn-exit" onClick={props.toggleModal}>
+        X
+      </button>
+      <div className="content-modal"></div>
     </div>
   );
 }
