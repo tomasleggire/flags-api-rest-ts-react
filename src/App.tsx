@@ -23,18 +23,11 @@ function App() {
   } = useApi();
   const { theme, toggleTheme } = useToggleTheme();
 
-  if (modalValue) {
-    return (
-      <div className={`App ${theme}`}>
-        <Navbar toggleTheme={toggleTheme} theme={theme} />
-        <ModalCountry toggleModal={toggleModal} />
-      </div>
-    );
-  }
-
   return (
     <div className={`App ${theme}`}>
       <Navbar toggleTheme={toggleTheme} theme={theme} />
+
+      <ModalCountry toggleModal={toggleModal} modalValue={modalValue} />
 
       <div className="main-div-bars">
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
