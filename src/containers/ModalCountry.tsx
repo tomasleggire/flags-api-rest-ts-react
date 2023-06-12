@@ -16,8 +16,16 @@ export default function ModalCountry(props: MyProps) {
         <span className="btn-exit-span">Back</span>
       </button>
       <div className="content-modal">
-        <div className="conten-moda-img-div">
-          {props.focusCountry.name.common}
+        <div className="conten-modal-img-div">
+          <img
+            className="country-flag-modal"
+            src={props.focusCountry?.flags.png}
+            alt={props.focusCountry?.flags.alt}
+          />
+        </div>
+        <div className="content-modal-texts">
+          <h2 className="texts-title">{props.focusCountry?.name.common}</h2>
+          <div className="texts-secondary-main"></div>
         </div>
       </div>
     </div>
