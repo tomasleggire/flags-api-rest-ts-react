@@ -20,6 +20,8 @@ function App() {
     loading,
     toggleModal,
     modalValue,
+    focusCountry,
+    changeFocusCountry,
   } = useApi();
   const { theme, toggleTheme } = useToggleTheme();
 
@@ -27,7 +29,11 @@ function App() {
     <div className={`App ${theme}`}>
       <Navbar toggleTheme={toggleTheme} theme={theme} />
 
-      <ModalCountry toggleModal={toggleModal} modalValue={modalValue} />
+      <ModalCountry
+        toggleModal={toggleModal}
+        modalValue={modalValue}
+        focusCountry={focusCountry}
+      />
 
       <div className="main-div-bars">
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
@@ -57,6 +63,7 @@ function App() {
             key={country.maps.googleMaps + " " + country.altSpellings[1]}
             id={`${country.maps.googleMaps} ${country.altSpellings[1]}`}
             toggleModal={toggleModal}
+            changeFocusCountry={changeFocusCountry}
           />
         ))}
       </CountryLayout>

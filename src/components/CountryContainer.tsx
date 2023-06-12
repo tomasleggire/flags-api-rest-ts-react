@@ -5,12 +5,13 @@ interface MyProps {
   countryData: Object;
   id: string;
   toggleModal: () => void;
+  changeFocusCountry: () => void;
 }
 
 export default function CountryContainer(props: MyProps) {
   const onClickCountry = (): void => {
+    props.changeFocusCountry(props.id);
     props.toggleModal();
-    console.log(props.id);
   };
 
   return (
