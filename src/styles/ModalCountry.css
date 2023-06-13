@@ -1,4 +1,5 @@
 .modal-main {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -70,15 +71,27 @@
   height: 100%;
   color: var(--black);
   width: 60%;
+  padding: 15px;
 }
 
-.texts-title {
-  padding: 15px;
+.texts-secondary-main {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.texts-main-one {
 }
 
 @media (width <= 560px) {
   .modal-main {
     padding: 0 20px;
+  }
+  .texts-secondary-main {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -89,7 +102,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 0px;
+    padding-top: 40px;
     gap: 20px;
   }
   .content-modal-texts {
