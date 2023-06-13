@@ -51,7 +51,7 @@
   width: 100%;
   height: 450px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-top: 30px;
 }
 
@@ -70,7 +70,7 @@
 .content-modal-texts {
   height: 100%;
   color: var(--black);
-  width: 60%;
+  width: 50%;
   padding: 15px;
 }
 
