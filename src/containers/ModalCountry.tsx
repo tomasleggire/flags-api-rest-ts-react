@@ -66,6 +66,11 @@ export default function ModalCountry(props: MyProps) {
               <DataCountry title="Languages" info={resultLan} />
             </div>
           </div>
+          <div className="content-borders">
+            {props.focusCountry?.borders?.map((item) => (
+              <span className="borders-child">{item}</span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
