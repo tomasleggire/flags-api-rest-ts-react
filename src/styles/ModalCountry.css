@@ -103,7 +103,6 @@
   margin-bottom: 10px;
   font-size: 14px;
   cursor: pointer;
-  flex-wrap: wrap;
 }
 
 @media (width <= 560px) {
@@ -127,10 +126,11 @@
     gap: 20px;
   }
   .content-modal-texts {
-    width: 86%;
+    width: 100%;
+    padding: 0;
   }
   .btn-exit {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     padding: 5px 15px;
   }
 
@@ -142,5 +142,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .borders-child {
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 10px;
   }
 }

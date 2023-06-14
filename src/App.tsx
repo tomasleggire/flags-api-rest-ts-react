@@ -22,6 +22,8 @@ function App() {
     modalValue,
     focusCountry,
     changeFocusCountry,
+    changeFocusCountryBorders,
+    loadingModal,
   } = useApi();
   const { theme, toggleTheme } = useToggleTheme();
 
@@ -33,6 +35,8 @@ function App() {
         toggleModal={toggleModal}
         modalValue={modalValue}
         focusCountry={focusCountry}
+        changeFocusCountryBorders={changeFocusCountryBorders}
+        loadingModal={loadingModal}
       />
 
       <div className="main-div-bars">

@@ -2,11 +2,14 @@ import React from "react";
 import "../styles/ModalCountry.css";
 import { BiArrowBack } from "react-icons/bi";
 import DataCountry from "../components/DataCountry";
+import ReactLoading from "react-loading";
 
 interface MyProps {
   toggleModal: () => void;
   modalValue: boolean;
   focusCountry: Object | null;
+  changeFocusCountryBorders: () => void;
+  loadingModal: boolean;
 }
 
 export default function ModalCountry(props: MyProps) {
@@ -31,47 +34,68 @@ export default function ModalCountry(props: MyProps) {
         <span className="btn-exit-span">Back</span>
       </button>
       <div className="content-modal">
-        <div className="conten-modal-img-div">
-          <img
-            className="country-flag-modal"
-            src={props.focusCountry?.flags.png}
-            alt={props.focusCountry?.flags.alt}
+        {props.loadingModal ? (
+          <ReactLoading
+            className="loading-img"
+            type="bubbles"
+            color="var(--black)"
           />
-        </div>
-        <div className="content-modal-texts">
-          <h2 className="texts-title">{props.focusCountry?.name.common}</h2>
-          <div className="texts-secondary-main">
-            <div className="texts-main-one">
-              <DataCountry
-                title="Native Name"
-                info={props.focusCountry?.name.official}
+        ) : (
+          <>
+            <div className="conten-modal-img-div">
+              <img
+                className="country-flag-modal"
+                src={props.focusCountry?.flags.png}
+                alt={props.focusCountry?.flags.alt}
               />
-              <DataCountry
-                title="Population"
-                info={props.focusCountry?.population}
-              />
-              <DataCountry title="Region" info={props.focusCountry?.region} />
-              <DataCountry
-                title="Sub Region"
-                info={props.focusCountry?.subregion}
-              />
-              <DataCountry title="Capital" info={props.focusCountry?.capital} />
             </div>
-            <div className="texts-main-two">
-              <DataCountry
-                title="Top Level Domain"
-                info={props.focusCountry?.tld}
-              />
-              <DataCountry title="Currencies" info={resultado?.name} />
-              <DataCountry title="Languages" info={resultLan} />
+            <div className="content-modal-texts">
+              <h2 className="texts-title">{props.focusCountry?.name.common}</h2>
+              <div className="texts-secondary-main">
+                <div className="texts-main-one">
+                  <DataCountry
+                    title="Native Name"
+                    info={props.focusCountry?.name.official}
+                  />
+                  <DataCountry
+                    title="Population"
+                    info={props.focusCountry?.population}
+                  />
+                  <DataCountry
+                    title="Region"
+                    info={props.focusCountry?.region}
+                  />
+                  <DataCountry
+                    title="Sub Region"
+                    info={props.focusCountry?.subregion}
+                  />
+                  <DataCountry
+                    title="Capital"
+                    info={props.focusCountry?.capital}
+                  />
+                </div>
+                <div className="texts-main-two">
+                  <DataCountry
+                    title="Top Level Domain"
+                    info={props.focusCountry?.tld}
+                  />
+                  <DataCountry title="Currencies" info={resultado?.name} />
+                  <DataCountry title="Languages" info={resultLan} />
+                </div>
+              </div>
+              <div className="content-borders">
+                {props.focusCountry?.borders?.map((item) => (
+                  <span
+                    className="borders-child"
+                    onClick={() => props.changeFocusCountryBorders(item)}
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="content-borders">
-            {props.focusCountry?.borders?.map((item) => (
-              <span className="borders-child">{item}</span>
-            ))}
-          </div>
-        </div>
+          </>
+        )}
       </div>
     </div>
   );

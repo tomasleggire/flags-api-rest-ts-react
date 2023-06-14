@@ -8,6 +8,7 @@ export default function useApi() {
   );
   const [searchValue, setSearchValue] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [loadingModal, setLoadingModal] = useState<boolean>(false);
 
   const [modalValue, setModalValue] = useState<boolean>(false);
   const [focusCountry, setFocusCountry] = useState<Object | null>(null);
@@ -76,6 +77,17 @@ export default function useApi() {
     console.log(res[0]);
   };
 
+  const changeFocusCountryBorders = (name: string): void => {
+    const fetchData = async () => {
+      setLoadingModal(true);
+      const res = await fetch(`https://restcountries.com/v3.1/alpha/${name}`);
+      const data = await res.json();
+      setLoadingModal(false);
+      setFocusCountry(data[0]);
+    };
+    fetchData();
+  };
+
   return {
     options,
     handleChange,
@@ -88,6 +100,8 @@ export default function useApi() {
     modalValue,
     focusCountry,
     changeFocusCountry,
+    changeFocusCountryBorders,
+    loadingModal,
   };
 }
 //"https://restcountries.com/v3.1/independent?status=true&fields=name,capital,region,population,subregion,languages,currencies,borders,flag"
