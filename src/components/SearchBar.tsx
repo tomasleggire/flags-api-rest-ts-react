@@ -5,6 +5,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 interface MyProps {
   searchValue: string;
   setSearchValue: () => void;
+  inputRef: HTMLElement;
 }
 
 export default function SearchBar(props: MyProps) {
@@ -18,6 +19,7 @@ export default function SearchBar(props: MyProps) {
         placeholder="Search for a country..."
         value={props.searchValue}
         onChange={(e) => props.setSearchValue(e.target.value)}
+        ref={props.inputRef}
       ></input>
     </div>
   );

@@ -8,6 +8,7 @@ import CountryContainer from "./components/CountryContainer";
 import CountryLayout from "./containers/CountryLayout";
 import ReactLoading from "react-loading";
 import ModalCountry from "./containers/ModalCountry";
+import useObserver from "./hooks/useObserver";
 
 function App() {
   const {
@@ -27,6 +28,10 @@ function App() {
   } = useApi();
   const { theme, toggleTheme } = useToggleTheme();
 
+  const { isVisible, inputRef } = useObserver();
+
+  isVisible ? console.log("visible") : console.log("no visible");
+
   return (
     <div className={`App ${theme}`}>
       <Navbar toggleTheme={toggleTheme} theme={theme} />
@@ -40,7 +45,11 @@ function App() {
       />
 
       <div className="main-div-bars">
-        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+        <SearchBar
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+          inputRef={inputRef}
+        />
         <FilterBy
           className="filter"
           options={options}
