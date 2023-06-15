@@ -9,6 +9,7 @@ import CountryLayout from "./containers/CountryLayout";
 import ReactLoading from "react-loading";
 import ModalCountry from "./containers/ModalCountry";
 import useObserver from "./hooks/useObserver";
+import ButtonToTop from "./components/ButtonToTop";
 
 function App() {
   const {
@@ -29,8 +30,6 @@ function App() {
   const { theme, toggleTheme } = useToggleTheme();
 
   const { isVisible, inputRef } = useObserver();
-
-  isVisible ? console.log("visible") : console.log("no visible");
 
   return (
     <div className={`App ${theme}`}>
@@ -80,6 +79,8 @@ function App() {
           />
         ))}
       </CountryLayout>
+
+      <ButtonToTop isVisible={isVisible} />
     </div>
   );
 }
