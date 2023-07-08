@@ -1,5 +1,5 @@
 .main-search-bar {
-  max-width: 320px;
+  max-width: 350px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -25,10 +25,17 @@
   padding: 15px 5px;
   color: var(--black);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
 }
 
 .search-bar-input:focus {
   outline: none;
+}
+
+@media (width <= 570px) {
+  .search-bar-input {
+  font-size: 14px;
+}
 }
 
 @media (width <= 470px) {

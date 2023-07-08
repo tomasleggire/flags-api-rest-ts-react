@@ -14,13 +14,13 @@
   animation-delay: 1s;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 1225px) {
   .country-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 750px) {
   .country-grid {
     grid-template-columns: 1fr;
   }

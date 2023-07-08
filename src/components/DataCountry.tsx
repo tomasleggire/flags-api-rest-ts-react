@@ -8,12 +8,12 @@ interface MyProps {
 
 export default function DataCountry(props: MyProps) {
   return (
-    <h6 className="texts-h6">
+    <h3 className="texts-h6">
       {props.title}:
       <span className="texts-span">
         <span> </span>
         {props.info}
       </span>
-    </h6>
+    </h3>
   );
 }

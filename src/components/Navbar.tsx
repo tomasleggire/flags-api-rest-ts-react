@@ -9,7 +9,7 @@ interface MyProps {
 export default function Navbar(props: MyProps) {
   return (
     <nav className="main-nav">
-      <h3 className="nav-title">Where in the world???</h3>
+      <h3 className="nav-title">Where in the world?</h3>
       <button className="btn-mode" onClick={props.toggleTheme}>
         {props.theme === "light" ? (
           <BsFillMoonFill className="btn-mode-icon" />

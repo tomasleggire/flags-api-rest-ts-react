@@ -19,6 +19,7 @@
 
 .main-nav h3 {
   text-align: center;
+  font-size: 22px;
 }
 
 .btn-mode {
@@ -33,12 +34,15 @@
 
 .btn-mode-icon {
   color: var(--black);
+  width: 20px;
+  height: 20px;
 }
 
 .main-nav h5 {
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--black);
+  font-size: 16px;
 }
 
 @media only screen and (max-width: 660px) {

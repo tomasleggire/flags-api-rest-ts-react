@@ -50,7 +50,7 @@ export default function ModalCountry(props: MyProps) {
               />
             </div>
             <div className="content-modal-texts">
-              <h2 className="texts-title">{props.focusCountry?.name.common}</h2>
+              <h1 className="texts-title">{props.focusCountry?.name.common}</h1>
               <div className="texts-secondary-main">
                 <div className="texts-main-one">
                   <DataCountry
